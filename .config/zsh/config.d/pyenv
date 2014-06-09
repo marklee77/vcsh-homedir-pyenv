@@ -1,0 +1,8 @@
+export PATH="${PATH}:${HOME}/.pyenv/bin"
+export WORKON_HOME="${HOME}/.pyenv/versions"
+export VIRTUAL_ENV_DISABLE_PROMPT="y"
+function virtualenv_info {
+    [ $VIRTUAL_ENV ] && echo '('`basename $VIRTUAL_ENV`') '
+}
+eval "$(pyenv init -)"
+pyenv virtualenvwrapper

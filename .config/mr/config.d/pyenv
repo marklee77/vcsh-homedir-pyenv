@@ -1,0 +1,23 @@
+[$XDG_CONFIG_HOME/vcsh/repo.d/pyenv.git]
+checkout = vcsh clone git@github.com:marklee77/vcshhome-pyenv.git pyenv
+commit   = vcsh common commit -a
+update   = vcsh common pull
+push     = vcsh common push
+status   = vcsh common status
+gc       = vcsh common gc
+
+[.pyenv]
+checkout = git clone https://github.com/yyuu/pyenv.git .pyenv
+push = /bin/true
+
+[.pyenv/plugins/pyenv-installer]
+checkout = git clone https://github.com/yyuu/pyenv-installer.git pyenv-installer
+push = /bin/true
+
+[.pyenv/plugins/pyenv-virtualenv]
+checkout = git clone https://github.com/yyuu/pyenv-virtualenv.git pyenv-virtualenv
+push = /bin/true
+
+[.pyenv/plugins/pyenv-virtualenvwrapper]
+checkout = git clone https://github.com/yyuu/pyenv-virtualenvwrapper.git pyenv-virtualenvwrapper
+push = /bin/true
