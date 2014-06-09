@@ -1,10 +1,10 @@
 [$XDG_CONFIG_HOME/vcsh/repo.d/pyenv.git]
-checkout = vcsh clone git@github.com:marklee77/vcshhome-pyenv.git pyenv
-commit   = vcsh common commit -a
-update   = vcsh common pull
-push     = vcsh common push
-status   = vcsh common status
-gc       = vcsh common gc
+checkout = vcsh clone git@github.com:marklee77/vcsh-homedir-pyenv.git pyenv
+commit   = vcsh pyenv commit -a
+update   = vcsh pyenv pull
+push     = vcsh pyenv push
+status   = vcsh pyenv status
+gc       = vcsh pyenv gc
 
 [.pyenv]
 checkout = git clone https://github.com/yyuu/pyenv.git .pyenv
