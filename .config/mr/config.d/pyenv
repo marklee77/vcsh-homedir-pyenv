@@ -1,4 +1,4 @@
-[$XDG_CONFIG_HOME/vcsh/repo.d/pyenv.git]
+[${XDG_CONFIG_HOME:-$HOME/.config}/vcsh/repo.d/pyenv.git]
 checkout = vcsh clone git@github.com:marklee77/vcsh-homedir-pyenv.git pyenv
 commit   = vcsh pyenv commit -a
 update   = vcsh pyenv pull
