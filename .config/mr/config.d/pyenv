@@ -1,8 +1,8 @@
 [${XDG_CONFIG_HOME:-$HOME/.config}/vcsh/repo.d/pyenv.git]
-checkout = vcsh clone git@github.com:marklee77/vcsh-homedir-pyenv.git pyenv
+checkout = vcsh clone https://github.com/marklee77/vcsh-homedir-pyenv.git pyenv
 commit   = vcsh pyenv commit -a
 update   = vcsh pyenv pull
-push     = vcsh pyenv push
+push     = vcsh pyenv push git@github.com:marklee77/vcsh-homedir-pyenv.git 
 status   = vcsh pyenv status
 gc       = vcsh pyenv gc
 
