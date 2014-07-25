@@ -1,8 +1,11 @@
-export PATH="${PATH}:${HOME}/.pyenv/bin"
+export PATH="${HOME}/.pyenv/bin:${PATH}"
 export WORKON_HOME="${HOME}/.pyenv/versions"
-export VIRTUAL_ENV_DISABLE_PROMPT="y"
-function virtualenv_info {
-    [ $VIRTUAL_ENV ] && echo '('`basename $VIRTUAL_ENV`') '
-}
+export PYENV_VIRTUALENVWRAPPER_PREFER_PYVENV="true"
+export VIRTUAL_ENV_DISABLE_PROMPT="true"
+
+function virtualenv_info { 
+    [ $VIRTUAL_ENV ] && echo '(%F{129}%B'${VIRTUAL_ENV##*/}'%b%f)'
+} 
+
 eval "$(pyenv init -)"
 pyenv virtualenvwrapper
