@@ -3,8 +3,15 @@ export WORKON_HOME="${HOME}/.pyenv/versions"
 export PYENV_VIRTUALENVWRAPPER_PREFER_PYVENV="true"
 export VIRTUAL_ENV_DISABLE_PROMPT="true"
 
-function virtualenv_info { 
-    [ $VIRTUAL_ENV ] && echo '(%F{129}%B'${VIRTUAL_ENV##*/}'%b%f)'
+function pyenv_info { 
+    if [ -n "${VIRTUAL_ENV}" ]; then
+      echo '%F{055}%B'${VIRTUAL_ENV##*/}'%b%f ' 
+    else
+      PYENV_VERSION=$(pyenv version-name)
+      if [ "${PYENV_VERSION}" != "system" ]; then
+        echo '%F{055}%Bpython-'${PYENV_VERSION}'%b%f ' 
+      fi
+    fi
 } 
 
 eval "$(pyenv init -)"
