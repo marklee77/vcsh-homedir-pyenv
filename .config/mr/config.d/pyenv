@@ -1,15 +1,19 @@
-[.pyenv]
+[${XDG_CONFIG_HOME:-$HOME/.config}/vcsh/repo.d/pyenv.git]
+checkout = vcsh clone https://gitlab.stillwell.me/mark/vcsh-homedir-pyenv.git pyenv
+setpush  = vcsh pyenv remote set-url --push origin git@stillwell.me:push/vcsh-homedir-pyenv.git
+
+[${HOME}/.pyenv]
 checkout = git clone https://github.com/yyuu/pyenv.git .pyenv
 skip     = test "$1" = push
 
-[.pyenv/plugins/pyenv-installer]
+[${HOME}/.pyenv/plugins/pyenv-installer]
 checkout = git clone https://github.com/yyuu/pyenv-installer.git pyenv-installer
 skip     = test "$1" = push
 
-[.pyenv/plugins/pyenv-virtualenv]
+[${HOME}/.pyenv/plugins/pyenv-virtualenv]
 checkout = git clone https://github.com/yyuu/pyenv-virtualenv.git pyenv-virtualenv
 skip     = test "$1" = push
 
-[.pyenv/plugins/pyenv-virtualenvwrapper]
+[${HOME}/.pyenv/plugins/pyenv-virtualenvwrapper]
 checkout = git clone https://github.com/yyuu/pyenv-virtualenvwrapper.git pyenv-virtualenvwrapper
 skip     = test "$1" = push
