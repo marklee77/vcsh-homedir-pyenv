@@ -6,8 +6,16 @@ setpush  = vcsh pyenv remote set-url --push origin git@stillwell.me:push/vcsh-ho
 checkout = git clone https://github.com/yyuu/pyenv.git .pyenv
 skip     = test "$1" = push
 
-[${HOME}/.pyenv/plugins/pyenv-installer]
-checkout = git clone https://github.com/yyuu/pyenv-installer.git pyenv-installer
+[${HOME}/.pyenv/plugins/pyenv-doctor]
+checkout = git clone https://github.com/yyuu/pyenv-doctor.git pyenv-doctor
+skip     = test "$1" = push
+
+[${HOME}/.pyenv/plugins/pyenv-pip-rehash]
+checkout = git clone https://github.com/yyuu/pyenv-pip-rehash.git pyenv-pip-rehash
+skip     = test "$1" = push
+
+[${HOME}/.pyenv/plugins/pyenv-update]
+checkout = git clone https://github.com/yyuu/pyenv-update.git pyenv-update
 skip     = test "$1" = push
 
 [${HOME}/.pyenv/plugins/pyenv-virtualenv]
@@ -16,4 +24,8 @@ skip     = test "$1" = push
 
 [${HOME}/.pyenv/plugins/pyenv-virtualenvwrapper]
 checkout = git clone https://github.com/yyuu/pyenv-virtualenvwrapper.git pyenv-virtualenvwrapper
+skip     = test "$1" = push
+
+[${HOME}/.pyenv/plugins/pyenv-which-ext]
+checkout = git clone https://github.com/yyuu/pyenv-which-ext.git pyenv-which-ext
 skip     = test "$1" = push
