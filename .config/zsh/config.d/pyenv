@@ -1,8 +1,6 @@
-# FIXME: would like to be able to use system python by default...
-
 export PATH="${HOME}/.pyenv/bin:${PATH}"
 
-export PYENV_VIRTUALENVWRAPPER_PREFER_PYVENV="true"
+export PYENV_VIRTUALENVWRAPPER_PREFER_PYVENV="false"
 
 export WORKON_HOME="${HOME}/.pyenv/versions"
 export VIRTUAL_ENV_DISABLE_PROMPT="true"
@@ -19,5 +17,11 @@ function pyenv_info {
 } 
 
 eval "$(pyenv init -)"
-eval "$(pyenv virtualenv-init -)"
-#pyenv virtualenvwrapper
+
+if [ -d "${HOME}/.pyenv/versions/virtualenv" ]; then
+    eval "$(pyenv virtualenv-init -)"
+    export VIRTUALENVWRAPPER_PYTHON="${HOME}/.pyenv/versions/virtualenv/bin/python"
+    export VIRTUALENVWRAPPER_VIRTUALENV="${HOME}/.pyenv/versions/virtualenv/bin/virtualenv"
+    export VIRTUALENVWRAPPER_SCRIPT="${HOME}/.pyenv/versions/virtualenv/bin/virtualenvwrapper.sh"
+    source ${VIRTUALENVWRAPPER_SCRIPT}
+fi
