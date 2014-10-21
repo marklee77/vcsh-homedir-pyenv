@@ -4,7 +4,7 @@
 !.config/mr/config.d
 !.config/mr/config.d/pyenv
 !.config/zsh
-!.config/zsh/config.d
-!.config/zsh/config.d/pyenv
+!.config/zsh/rc.d
+!.config/zsh/rc.d/pyenv
 !.gitignore.d
 !.gitignore.d/pyenv
