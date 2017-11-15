@@ -7,16 +7,16 @@ export VIRTUAL_ENV_DISABLE_PROMPT="true"
 
 export PROMPT_INFO="${PROMPT_INFO}\$(pyenv_info)"
 
-function pyenv_info { 
+function pyenv_info {
     if [ -n "${VIRTUAL_ENV}" ]; then
-      echo '%F{055}%B'${VIRTUAL_ENV##*/}'%b%f ' 
+      echo '%F{055}%B'${VIRTUAL_ENV##*/}'%b%f '
     else
       PYENV_VERSION=$(pyenv version-name)
       if [ "${PYENV_VERSION}" != "system" ]; then
-        echo '%F{055}%Bpython-'${PYENV_VERSION}'%b%f ' 
+        echo '%F{055}%Bpython-'${PYENV_VERSION}'%b%f '
       fi
     fi
-} 
+}
 
 eval "$(pyenv init -)"
 
